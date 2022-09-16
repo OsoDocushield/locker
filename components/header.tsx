@@ -34,6 +34,12 @@ export default function Header() {
               >
                 Sign in
               </a>
+              <a
+                href={`/auth/signup`}
+                className={styles.buttonPrimary}
+              >
+                Register
+              </a>
             </>
           )}
           {session?.user && (
