@@ -1,4 +1,5 @@
 import { useSession } from "next-auth/react"
+
 import Layout from "../components/layout"
 
 export default function Page() {
@@ -20,7 +21,7 @@ export default function Page() {
   return (
     <Layout>
       <h1>NFT Locker, {session.user?.name}</h1>
-      <button>+ Locker</button>
+      <button onClick={handleCreateLocker}>+ Locker</button>
     </Layout>
   )
 }
