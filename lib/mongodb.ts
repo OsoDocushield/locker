@@ -5,6 +5,7 @@ if (!process.env.MONGODB_URI) {
 }
 
 const uri = process.env.MONGODB_URI
+
 const options = {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -14,7 +15,7 @@ const options = {
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(uri, options)
+    await mongoose.connect(uri)
 
     console.log("MongoDB Connected...")
   } catch (err) {

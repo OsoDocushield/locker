@@ -1,4 +1,6 @@
 import NextAuth from "next-auth"
+import { compare } from "bcryptjs"
+import CredentialsProvider from "next-auth/providers/credentials"
 import Auth0Provider from "next-auth/providers/auth0"
 import FacebookProvider from "next-auth/providers/facebook"
 import GithubProvider from "next-auth/providers/github"
@@ -7,11 +9,48 @@ import TwitterProvider from "next-auth/providers/twitter"
 // import EmailProvider from "next-auth/providers/email"
 // import AppleProvider from "next-auth/providers/apple"
 
+import connectDB from "../../../lib/mongodb"
+import User from "../../../models/User"
+
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
 export default NextAuth({
   // https://next-auth.js.org/configuration/providers
   providers: [
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        email: {
+          label: "email",
+          type: "email",
+          placeholder: "jsmith@gmail.com",
+        },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(
+        credentials: Record<"email" | "password", string> | undefined
+      ) {
+        await connectDB()
+        const user = await User.findOne({ email: credentials?.email })
+
+        if (!user) {
+          throw new Error("No user found with the email")
+        }
+
+        const checkPassword = await compare(
+          credentials?.password as string,
+          user.password
+        )
+
+        console.log("APOLLO: 1034", checkPassword)
+
+        if (!checkPassword) {
+          throw new Error("Password doesn't match")
+        }
+
+        return { email: user.email }
+      },
+    }),
     // EmailProvider({
     //   server: process.env.EMAIL_SERVER,
     //   from: process.env.EMAIL_FROM,
@@ -68,7 +107,7 @@ export default NextAuth({
     // Use JSON Web Tokens for session instead of database sessions.
     // This option can be used with or without a database for users/accounts.
     // Note: `strategy` should be set to 'jwt' if no database is used.
-    strategy: 'jwt'
+    strategy: "jwt",
 
     // Seconds - How long until an idle session expires and is no longer valid.
     // maxAge: 30 * 24 * 60 * 60, // 30 days
