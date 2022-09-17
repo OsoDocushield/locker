@@ -74,6 +74,7 @@
   color: #fff;
   text-decoration: none;
   padding: .7rem 1.4rem;
+  margin-left: 10px;
 }
 
 .buttonPrimary:hover {
