@@ -19,6 +19,7 @@ export default function ConnectWallet () {
       <div>
         <button>Connect Wallet</button>
       </div>
+      <br />
       <div>
         <button>Stake NFT</button>
       </div>

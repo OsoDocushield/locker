@@ -28,7 +28,10 @@ export default function Locker() {
     <Layout>
       <h1>Locker NAME</h1>
       <h2>{session.user?.name}'s Locker</h2>
-      <button>upload</button>
+      <div>
+        <button>upload</button>
+      </div>
+      <br />
       <div>
         <button>preview</button>
       </div>
