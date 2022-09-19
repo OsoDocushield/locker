@@ -2,7 +2,7 @@
 
 This is an infrastructure of the NFT locker
 
-Check out the TypeScript [documentation](https://next-auth.js.org/getting-started/typescript).
+[Deployed](https://nft-locker.vercel.app/)
 
 ## Getting Started
 
