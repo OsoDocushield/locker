@@ -11,7 +11,6 @@ export async function getServerSideProps() {
 export default function SignIn({
   providers,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  console.log("APOLLO: 1057", providers)
   return (
     <>
       {providers && Object.values(providers).map((provider) => (

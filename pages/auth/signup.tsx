@@ -1,6 +1,5 @@
 import { ChangeEvent, useState } from "react"
-import { useSession } from "next-auth/react"
-import { Session } from "next-auth/core/types"
+import { signIn, useSession } from "next-auth/react"
 import router from "next/router"
 
 import Layout from "../../components/layout"
@@ -48,18 +47,26 @@ export default function SignUp() {
       setError("Password Confirm is not matched")
       return
     }
+    try {
+      const fetchRes = await fetch("/api/register", {
+        method: "POST",
+        body: JSON.stringify(user),
+      })
 
-    await fetch("api/register", {
-      method: "POST",
-      body: JSON.stringify(user),
-    })
-    // Clear user info
-    setUser({
-      name: "",
-      email: "",
-      password: "",
-      confirm: "",
-    })
+      const res = await fetchRes.json()
+
+      // Clear user info
+      setUser({
+        name: "",
+        email: "",
+        password: "",
+        confirm: "",
+      })
+
+      signIn('credentials', { redirect: false, email: res.email, password: res.password })
+    } catch (err) {
+      console.error("Err: ", err)
+    }
   }
 
   return (
