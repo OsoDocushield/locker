@@ -108,7 +108,7 @@ export default function SignUp() {
         />
       </div>
       <br />
-      <button onClick={handleSubmit}>Register</button>
+      <button onClick={handleSubmit}>Sign Up</button>
     </Layout>
   )
 }
