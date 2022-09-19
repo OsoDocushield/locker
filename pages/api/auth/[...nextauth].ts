@@ -42,8 +42,6 @@ export default NextAuth({
           user.password
         )
 
-        console.log("APOLLO: 1034", checkPassword)
-
         if (!checkPassword) {
           throw new Error("Password doesn't match")
         }
