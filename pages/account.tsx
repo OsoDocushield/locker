@@ -1,4 +1,4 @@
-import Layout from "../components/layout"
+import Layout from "../components/layout";
 
 export default function Page() {
   return (
@@ -8,5 +8,5 @@ export default function Page() {
         <button>Edit</button> &nbsp; <button>Unstake</button>
       </div>
     </Layout>
-  )
+  );
 }

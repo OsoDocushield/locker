@@ -1,5 +1,5 @@
-import { GetServerSideProps } from "next"
-import Layout from "../components/layout"
+import { GetServerSideProps } from "next";
+import Layout from "../components/layout";
 
 export default function Page() {
   return (
@@ -23,12 +23,12 @@ export default function Page() {
         render.
       </p>
     </Layout>
-  )
+  );
 }
 
 // Export the `session` prop to use sessions with Server Side Rendering
 export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
   return {
     props: {},
-  }
-}
+  };
+};
