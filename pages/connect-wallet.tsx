@@ -16,7 +16,6 @@ export default function ConnectWallet() {
   }
 
   const handleConnectWallet = async () => {
-    const { kadena } = window
     const res = await connectXWallet();
 
     if (res.status === "success") {
