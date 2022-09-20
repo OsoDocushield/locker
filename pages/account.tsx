@@ -1,24 +1,6 @@
-import { useState, useEffect } from 'react'
-import { useSession } from 'next-auth/react'
-import Layout from '../components/layout'
-import AccessDenied from '../components/access-denied'
+import Layout from "../components/layout"
 
-export default function Page () {
-  const { data: session, status } = useSession()
-  const loading = status === 'loading'
-  const [ content , setContent ] = useState()
-
-  // Fetch content from protected route
-  useEffect(()=>{
-  },[session])
-
-  // When rendering client side don't display anything until loading is complete
-  if (typeof window !== 'undefined' && loading) return null
-
-  // If no session exists, display access denied message
-  if (!session) { return  <Layout><AccessDenied/></Layout> }
-
-  // If session exists, display content
+export default function Page() {
   return (
     <Layout>
       <h1>My locker</h1>

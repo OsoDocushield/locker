@@ -1,16 +1,7 @@
 import { GetServerSideProps } from "next"
-import type { Session } from "next-auth"
-import { useSession, getSession } from "next-auth/react"
 import Layout from "../components/layout"
 
 export default function Page() {
-  // As this page uses Server Side Rendering, the `session` will be already
-  // populated on render without needing to go through a loading stage.
-  // This is possible because of the shared context configured in `_app.js` that
-  // is used by `useSession()`.
-  const { data: session, status } = useSession()
-  const loading = status === 'loading'
-
   return (
     <Layout>
       <h1>Server Side Rendering</h1>
@@ -36,12 +27,8 @@ export default function Page() {
 }
 
 // Export the `session` prop to use sessions with Server Side Rendering
-export const getServerSideProps: GetServerSideProps<{
-  session: Session | null
-}> = async (context) => {
+export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
   return {
-    props: {
-      session: await getSession(context),
-    },
+    props: {},
   }
 }

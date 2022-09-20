@@ -1,5 +1,3 @@
-import { useSession } from "next-auth/react"
-
 import Header from "./header"
 import Footer from "./footer"
 import SideBar from "./sidebar"
@@ -11,16 +9,12 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const { data: session, status } = useSession()
-
   return (
     <>
       <Header />
       <main className={styles.main}>
-        {session && <SideBar />}
-        <div>
-          {children}
-        </div>
+        <SideBar />
+        <div>{children}</div>
       </main>
       <Footer />
     </>

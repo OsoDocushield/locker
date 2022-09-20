@@ -1,13 +1,10 @@
 {
-  "name": "next-auth-typescript-example",
+  "name": "nft-locker",
   "version": "0.0.0",
   "private": true,
-  "description": "An example project for NextAuth.js using Typescript",
-  "repository": "https://github.com/nextauthjs/next-auth-typescript-example.git",
-  "bugs": {
-    "url": "https://github.com/nextauthjs/next-auth/issues"
-  },
-  "homepage": "http://next-auth-typescript-example.now.sh",
+  "description": "This is the nft locker project",
+  "repository": "https://github.com/OsoDocushield/locker",
+  "homepage": "hhttps://nft-locker.vercel.app/",
   "main": "",
   "scripts": {
     "dev": "next",
@@ -15,29 +12,17 @@
     "start": "next start",
     "types": "tsc --noEmit"
   },
-  "author": "Lluis Agusti <lluis@hey.com>",
-  "contributors": [
-    "Balázs Orbán <info@balazsorban.com>",
-    "Iain Collins <me@iaincollins.com>",
-    "Nico Domino <yo@ndo.dev>"
-  ],
+  "author": "Jacob <jacobyidev@gmail.com>",
   "license": "ISC",
   "prettier": {
     "semi": false
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "mongodb": "^4.9.1",
-    "mongoose": "^6.6.1",
     "next": "^11.0.0",
-    "next-auth": "^4.0.1",
-    "nodemailer": "^6.6.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@types/bcryptjs": "^2.4.2",
-    "@types/mongoose": "^5.11.97",
     "@types/node": "^15.12.4",
     "@types/react": "17.0.2",
     "@types/react-dom": "^17.0.8",
