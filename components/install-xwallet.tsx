@@ -5,9 +5,9 @@ export default function InstallXWallet () {
       <p>
         <a href="https://chrome.google.com/webstore/detail/x-wallet/bofddndhbegljegmpmnlbhcejofmjgbn"
            onClick={(e) => {
-           e.preventDefault()
+           e.preventDefault();
         }}>You must install X-Wallet to sign in</a>
       </p>
     </>
-  )
+  );
 }

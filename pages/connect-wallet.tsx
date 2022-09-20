@@ -1,10 +1,10 @@
-import Layout from "../components/layout"
-import { isXWalletInstalled, connectXWallet } from "../lib/xWallet"
-import InstallXWallet from "../components/install-xwallet"
+import Layout from "../components/layout";
+import { isXWalletInstalled, connectXWallet } from "../lib/xWallet";
+import InstallXWallet from "../components/install-xwallet";
 
 export default function ConnectWallet() {
   if (typeof window === "undefined") {
-    return null
+    return null;
   }
 
   if (!isXWalletInstalled()) {
@@ -12,19 +12,19 @@ export default function ConnectWallet() {
       <Layout>
         <InstallXWallet />
       </Layout>
-    )
+    );
   }
 
   const handleConnectWallet = async () => {
     const res = await connectXWallet();
 
     if (res.status === "success") {
-      alert("X-wallet Connected successfully")
+      alert("X-wallet Connected successfully");
     }
     if (res.status === "fail") {
-      alert("Connect fail")
+      alert("Connect fail");
     }
-  }
+  };
 
   return (
     <Layout>
@@ -37,5 +37,5 @@ export default function ConnectWallet() {
         <button>Stake NFT</button>
       </div>
     </Layout>
-  )
+  );
 }

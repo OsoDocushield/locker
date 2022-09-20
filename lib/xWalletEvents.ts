@@ -1,2 +1,2 @@
-export const RES_ACCOUNTCHANGE = 'res_accountChange'
-export const RES_CHECKSTATUS = 'res_checkStatus'
+export const RES_ACCOUNTCHANGE = 'res_accountChange';
+export const RES_CHECKSTATUS = 'res_checkStatus';

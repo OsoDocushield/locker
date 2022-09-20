@@ -5,9 +5,9 @@ export default function AccessDenied () {
       <p>
         <a href="/api/auth/signin"
            onClick={(e) => {
-           e.preventDefault()
+           e.preventDefault();
         }}>You must be signed in to view this page</a>
       </p>
     </>
-  )
+  );
 }
