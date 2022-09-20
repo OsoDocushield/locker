@@ -4,8 +4,11 @@ const nextConfig = {
   swcMinify: true,
   api: {
     bodyParser: {
-      sizeLimit: '1mb',
+      sizeLimit: "1mb",
     },
+  },
+  env: {
+    NETWORK_ID: process.env.NETWORK_ID,
   },
 }
 
