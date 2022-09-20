@@ -5,12 +5,12 @@ import styles from './sidebar.module.css';
 export default function SideBar() {
   return (
     <div className={styles.main}>
-      <div>
+      <div className={styles.item}>
         <Link href="/">
           Home
         </Link>        
       </div>
-      <div>
+      <div className={styles.item}>
         <Link href="/account">
           Account
         </Link>
