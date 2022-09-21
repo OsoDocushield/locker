@@ -1,8 +1,28 @@
 /* Set min-height to avoid page reflow while session loading */
 .header {
+  display: flex;
+  background-color: #000;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.logo {
   font-size: 36px;
   font-weight: 700;
-  background-color: #000;
   color: #ddd;
-  padding: 1rem 2rem;
+}
+
+.user {
+  color: #ddd;
+}
+
+.disconnect {
+  background-color: #ff3333;
+  border: none;
+  color: #fff;
+  margin-left: auto;
+}
+
+.disconnectWrapper {
+  display: flex;
 }

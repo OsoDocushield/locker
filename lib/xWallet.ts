@@ -1,3 +1,4 @@
+import { KDA_CHECKSTATUS, KDA_CONNECT, KDA_DISCONNECT } from "./xWalletMethods";
 
 export const isXWalletInstalled = () => {
   const { kadena } = window;
@@ -6,17 +7,24 @@ export const isXWalletInstalled = () => {
 
 export const connectXWallet = () => {
   const { kadena } = window;
-  console.log("APOLLO: ", kadena, process.env.NETWORK_ID);
   return kadena.request({
-    method: "kda_connect",
+    method: KDA_CONNECT,
     networkId: process.env.NETWORK_ID,
   });
 };
 
 export const checkXWalletStatus = () => {
   const { kadena } = window;
-  kadena.request({
-    method: 'kda_checkStatus',
+  return kadena.request({
+    method: KDA_CHECKSTATUS,
+    networkId: process.env.NETWORK_ID,
+  });
+};
+
+export const disconnectXWallet = () => {
+  const { kadena } = window;
+  return kadena.request({
+    method: KDA_DISCONNECT,
     networkId: process.env.NETWORK_ID,
   });
 };
