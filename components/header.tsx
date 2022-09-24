@@ -16,7 +16,7 @@ const customStyles = {
   },
 }
 
-ReactModal.setAppElement()
+ReactModal.setAppElement("body")
 
 export default function Header() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
