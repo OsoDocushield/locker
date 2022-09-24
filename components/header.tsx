@@ -16,7 +16,7 @@ const customStyles = {
   },
 }
 
-ReactModal.setAppElement("#ConnectWalletModal")
+ReactModal.setAppElement("body")
 
 export default function Header() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -54,7 +54,6 @@ export default function Header() {
         <style>{`.nojs-show { opacity: 1; top: 0; }`}</style>
       </noscript>
       <div className={styles.header}>
-        <div id="ConnectWalletModal"></div>
         <div className={styles.logo}>NFT locker </div>
 
         <div className={styles.user}>
