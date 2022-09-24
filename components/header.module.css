@@ -26,3 +26,16 @@
 .disconnectWrapper {
   display: flex;
 }
+
+.modalContentWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.connnectButton {
+  margin: 0 10px;
+}
+
+.closeButton {
+  margin-top: 20px;
+}
